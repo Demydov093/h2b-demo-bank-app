@@ -1,13 +1,16 @@
-import { Link } from 'expo-router';
-import React from 'react';
-import { Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+import Card from '@/src/sections/dasboard/_Card';
+import Header from '@/src/sections/dasboard/_Header';
 
 export default function Index() {
   return (
-    <View className="flex-1 justify-center items-center">
-      <Text className="text-2xl text-blue-200">Welcome to bank app</Text>
-
-      <Link href="/transactions/transactions">Transactions</Link>
-    </View>
+    <SafeAreaView className={`flex-1 bg-white ${Platform.OS === 'ios' ? 'pt-0' : 'pt-7'}`}>
+      <StatusBar style="dark" />
+      <Header />
+      <Card />
+    </SafeAreaView>
   );
 }
