@@ -11,4 +11,4 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm run lint
-      - run: npm run tsc --noEmit
+      - run: npm run tsc
