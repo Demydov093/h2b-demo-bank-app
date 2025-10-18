@@ -1,24 +1,25 @@
-import { Tabs } from 'expo-router'
-import React from 'react'
+import { Tabs } from 'expo-router';
+import React from 'react';
 
 const _Layout = () => {
   return (
     <Tabs>
-        <Tabs.Screen
+      <Tabs.Screen
         name="index"
         options={{
-            title: 'Dashboard',
-            headerShown: false
+          title: 'Dashboard',
+          headerShown: false,
         }}
-        />
-        <Tabs.Screen 
-        name='refferal'
+      />
+      <Tabs.Screen
+        name="refferal"
         options={{
-            title: 'Refferal',
-            headerShown: false
-        }}/>
+          title: 'Refferal',
+          headerShown: false,
+        }}
+      />
     </Tabs>
-  )
-}
+  );
+};
 
-export default _Layout
+export default _Layout;
