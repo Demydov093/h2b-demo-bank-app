@@ -1,15 +1,12 @@
+import React from "react";
 import { Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Welcome to bank app</Text>
+    <View className="flex-1 justify-center items-center">
+      <Text className="text-2xl text-blue-200">Welcome to bank app</Text>
+
+      <Text>Hello</Text>
     </View>
   );
 }
