@@ -11,6 +11,7 @@ export default function Index() {
       <StatusBar style="dark" />
       <Header />
       <Card />
+      {/* <Link href={'/storybook'}>Storybook</Link> */}
     </SafeAreaView>
   );
 }

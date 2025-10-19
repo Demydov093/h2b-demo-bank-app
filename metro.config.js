@@ -1,6 +1,11 @@
-const { getDefaultConfig } = require("expo/metro-config");
+const { getDefaultConfig } = require('expo/metro-config');
 const { withNativeWind } = require('nativewind/metro');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
-const config = getDefaultConfig(__dirname)
+/** @type {import('expo/metro-config').MetroConfig} */
+let config = getDefaultConfig(__dirname);
 
-module.exports = withNativeWind(config, { input: './app/globals.css' })
+config = withNativeWind(config, { input: './app/globals.css' });
+config = withStorybook(config);
+
+module.exports = config;
