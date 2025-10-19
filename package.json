@@ -10,7 +10,8 @@
     "web": "expo start --web",
     "lint": "eslint \"**/*.{ts,tsx}\" --fix && prettier --write \"**/*.{ts,tsx}\"",
     "prepare": "husky",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "storybook-generate": "sb-rn-get-stories"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
@@ -44,9 +45,18 @@
     "tailwindcss": "^3.4.18"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@gorhom/bottom-sheet": "^5.2.6",
+    "@react-native-async-storage/async-storage": "^2.2.0",
+    "@react-native-community/datetimepicker": "^8.4.5",
+    "@react-native-community/slider": "^5.0.1",
+    "@storybook/addon-ondevice-actions": "^9.1.4",
+    "@storybook/addon-ondevice-controls": "^9.1.4",
+    "@storybook/react-native": "^9.1.4",
     "@types/react": "~19.1.0",
     "@typescript-eslint/eslint-plugin": "^8.46.1",
     "@typescript-eslint/parser": "^8.46.1",
+    "babel-loader": "^8.4.1",
     "eslint": "^9.38.0",
     "eslint-config-expo": "~10.0.0",
     "eslint-config-prettier": "^10.1.8",
@@ -55,6 +65,8 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.4",
     "prettier": "^3.6.2",
+    "react-native-svg": "^15.14.0",
+    "storybook": "^9.1.13",
     "typescript": "~5.9.2"
   },
   "private": true,
