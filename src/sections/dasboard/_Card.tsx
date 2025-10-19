@@ -41,7 +41,7 @@ const Card: React.FC = () => {
       />
 
       <View className="flex-row justify-between mt-4 gap-2.5 mx-3">
-        <Link href="/transactions/transactions" asChild>
+        <Link href="/deposit/transaction" asChild>
           <Button
             text="Deposit Card"
             icon={<PlusIcon size={20} color="white" />}
@@ -49,7 +49,7 @@ const Card: React.FC = () => {
           />
         </Link>
 
-        <Link href="/transactions/transactions" asChild>
+        <Link href="/deposit/transaction" asChild>
           <Button
             text="Card Settings"
             icon={<Cog8ToothIcon size={20} color="white" />}

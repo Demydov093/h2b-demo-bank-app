@@ -14,3 +14,16 @@ export interface Transaction {
   amount: number | string;
   date: string;
 }
+
+export type CurrencyItem = {
+  label: string;
+  value: string;
+};
+
+export type DropdownItem = {
+  label: string;
+  value: string;
+  cardNumber: string;
+  gradientColors: readonly string[];
+  textColor: string;
+};
