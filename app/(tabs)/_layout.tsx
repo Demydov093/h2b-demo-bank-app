@@ -3,7 +3,14 @@ import { HomeIcon, UserPlusIcon } from 'react-native-heroicons/outline';
 
 const _Layout = () => {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: 'black',
+        tabBarInactiveTintColor: 'gray',
+        tabBarShowLabel: true,
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
