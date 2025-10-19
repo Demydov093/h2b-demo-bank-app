@@ -7,3 +7,10 @@ export interface Card {
   //   expirationDate: string;
   //   cvv: string | number;
 }
+
+export interface Transaction {
+  id: string | number;
+  title: string;
+  amount: number | string;
+  date: string;
+}
