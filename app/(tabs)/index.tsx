@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Card from '@/src/sections/dasboard/_Card';
 import Header from '@/src/sections/dasboard/_Header';
+import Transactions from '@/src/sections/dasboard/_TransactionsList';
 
 export default function Index() {
   return (
@@ -11,6 +12,7 @@ export default function Index() {
       <StatusBar style="dark" />
       <Header />
       <Card />
+      <Transactions />
       {/* <Link href={'/storybook'}>Storybook</Link> */}
     </SafeAreaView>
   );
