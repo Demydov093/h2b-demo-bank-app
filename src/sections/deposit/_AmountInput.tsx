@@ -37,8 +37,9 @@ const AmountInput: React.FC<AmountInputProps> = ({
           onChangeText={setAmount}
           placeholder="0.00"
           keyboardType="numeric"
-          className="font-bold text-5xl text-right"
+          className="font-bold text-5xl text-right p-2.5 text-center"
           editable={!loading}
+          style={{ textAlignVertical: 'center', lineHeight: 50 }}
         />
         <View className="flex h-[50px] justify-center">
           <Text className="text-4xl font-medium leading-tight">{selectedCurrency}</Text>

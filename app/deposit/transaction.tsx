@@ -71,7 +71,7 @@ const TransferScreen: React.FC = () => {
       style={{
         flex: 1,
         backgroundColor: 'white',
-        paddingTop: Platform.OS === 'ios' ? 0 : 30,
+        paddingTop: 30,
       }}
       edges={['bottom', 'left', 'right']}
     >
@@ -102,11 +102,7 @@ const TransferScreen: React.FC = () => {
           />
 
           {/* Sticky button */}
-          <View
-            className={`absolute left-2 right-2 ${
-              keyboardHeight > 0 && Platform.OS === 'ios' ? 'bottom-15' : 'bottom-3'
-            }`}
-          >
+          <View className="absolute left-2 right-2 bottom-3">
             <Button
               text={loading ? '' : 'Deposit'}
               height={48}
