@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
-import React, { useMemo, useState } from 'react';
-import { Keyboard, KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Keyboard, KeyboardAvoidingView, Platform, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Button from '@/src/components/Button';
@@ -52,7 +52,7 @@ const TransferScreen: React.FC = () => {
     }, 3000);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const showSubscription = Keyboard.addListener('keyboardDidShow', (e) => {
       setKeyboardHeight(e.endCoordinates.height);
     });
@@ -103,10 +103,9 @@ const TransferScreen: React.FC = () => {
 
           {/* Sticky button */}
           <View
-            style={[
-              styles.stickyButton,
-              { bottom: keyboardHeight > 0 && Platform.OS === 'ios' ? 60 : 12 },
-            ]}
+            className={`absolute left-2 right-2 ${
+              keyboardHeight > 0 && Platform.OS === 'ios' ? 'bottom-15' : 'bottom-3'
+            }`}
           >
             <Button
               text={loading ? '' : 'Deposit'}
@@ -122,13 +121,5 @@ const TransferScreen: React.FC = () => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  stickyButton: {
-    position: 'absolute',
-    left: 8,
-    right: 8,
-  },
-});
 
 export default TransferScreen;
