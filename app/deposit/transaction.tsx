@@ -10,10 +10,12 @@ import Header from '@/src/sections/deposit/_Header';
 import { Card, DropdownItem } from '@/types';
 import { cardsData } from '@/utils';
 
+import { useDepositStore } from '@/src/store/depositeStore';
 import { StatusBar } from 'expo-status-bar';
 
 const TransferScreen: React.FC = () => {
   const router = useRouter();
+  const setDeposit = useDepositStore((state) => state.setDeposit);
 
   const [amount, setAmount] = useState<string>('100');
   const [selectedCurrency, setSelectedCurrency] = useState<string>('PLN');
@@ -44,6 +46,7 @@ const TransferScreen: React.FC = () => {
 
     setLoading(true);
     setTimeout(() => {
+      setDeposit(amount, selectedCurrency, selectedCardObj);
       setLoading(false);
       router.push('/deposit/success');
     }, 3000);
