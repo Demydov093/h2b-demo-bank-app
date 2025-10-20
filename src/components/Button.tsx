@@ -24,6 +24,9 @@ export default function Button({
 
   return (
     <TouchableOpacity
+      testID="button-touchable"
+      accessible
+      accessibilityState={{ disabled: isDisabled }}
       onPress={onPress}
       disabled={isDisabled}
       className={`${className} flex-row items-center justify-center rounded-2xl px-4 ${
@@ -32,7 +35,7 @@ export default function Button({
       style={{ height: height || 48 }}
     >
       {loading ? (
-        <ActivityIndicator color="#C9FF08" size={35} />
+        <ActivityIndicator testID="activity-indicator" color="#C9FF08" size={35} />
       ) : (
         <>
           {icon && <View className="mr-2">{icon}</View>}

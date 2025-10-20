@@ -9,6 +9,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: 'npm'
+
       - run: npm ci
-      - run: npm run lint
-      - run: npm run tsc
+
+      - name: Run Linter
+        run: npm run lint
+
+      - name: Compile TypeScript
+        run: npm run tsc
+
+      - name: Run Tests
+        run: npm test -- --ci --coverage

@@ -11,13 +11,15 @@
     "lint": "eslint \"**/*.{ts,tsx}\" --fix && prettier --write \"**/*.{ts,tsx}\"",
     "prepare": "husky",
     "tsc": "tsc --noEmit",
-    "storybook-generate": "sb-rn-get-stories"
+    "storybook-generate": "sb-rn-get-stories",
+    "test": "jest --watchAll=false"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/elements": "^2.6.3",
     "@react-navigation/native": "^7.1.8",
+    "@types/jest": "29.5.14",
     "expo": "~54.0.13",
     "expo-clipboard": "^8.0.7",
     "expo-constants": "~18.0.9",
@@ -32,6 +34,8 @@
     "expo-symbols": "~1.0.7",
     "expo-system-ui": "~6.0.7",
     "expo-web-browser": "~15.0.8",
+    "jest": "~29.7.0",
+    "jest-expo": "~54.0.12",
     "nativewind": "^4.2.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -58,6 +62,7 @@
     "@storybook/addon-ondevice-actions": "^9.1.4",
     "@storybook/addon-ondevice-controls": "^9.1.4",
     "@storybook/react-native": "^9.1.4",
+    "@testing-library/react-native": "^13.3.3",
     "@types/react": "~19.1.0",
     "@typescript-eslint/eslint-plugin": "^8.46.1",
     "@typescript-eslint/parser": "^8.46.1",
@@ -84,6 +89,12 @@
     "app/**/*.{ts,tsx}": [
       "eslint --fix",
       "prettier --write"
+    ]
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(?:.pnpm/)?((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg))"
     ]
   }
 }
