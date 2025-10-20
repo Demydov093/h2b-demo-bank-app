@@ -53,19 +53,22 @@ const CardItem: React.FC<Card> = ({
     <TouchableOpacity activeOpacity={0.9} onPress={flipCard}>
       <View className="relative">
         <Animated.View
-          className={`flex-row rounded-2xl mr-3 overflow-hidden`}
           style={{
+            transform: [{ rotateY: frontInterpolate }],
             width: width * 0.9,
             height: height * 0.25,
-            transform: [{ rotateY: frontInterpolate }],
+            borderRadius: 12,
             backfaceVisibility: 'hidden',
+            marginRight: 10,
+            overflow: 'hidden',
           }}
+          pointerEvents={!flipped ? 'auto' : 'none'}
         >
           <LinearGradient
             colors={gradientColors}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
-            className="flex-1 p-4 justify-between"
+            style={{ flex: 1, padding: 16, justifyContent: 'space-between' }}
           >
             <View className="flex-row justify-between items-start">
               <Text className={`text-lg text-[${textColor}]`}>Card ** {cardNumber.slice(-4)}</Text>
