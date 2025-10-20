@@ -4,8 +4,8 @@ export interface Card {
   cardNumber: string;
   gradientColors?: readonly [string, string, ...string[]];
   textColor?: string;
-  //   expirationDate: string;
-  //   cvv: string | number;
+  expirationDate: string;
+  cvv: string | number;
 }
 
 export interface Transaction {
