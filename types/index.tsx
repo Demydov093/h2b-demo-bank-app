@@ -27,3 +27,10 @@ export type DropdownItem = {
   gradientColors: readonly string[];
   textColor: string;
 };
+
+export type DepositState = {
+  amount: string;
+  currency: string;
+  card: Card | null;
+  setDeposit: (amount: string, currency: string, card: Card) => void;
+};
